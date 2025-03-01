@@ -9,3 +9,9 @@ const createSquares = (width, height, color, quantity) => {
   }
   return squares;
 };
+const appendSquares = () => {
+  const container = document.querySelector('.container');
+  const squares = createSquares('60', '60', 'lightblue', 256);
+  squares.forEach((square) => container.appendChild(square));
+};
+appendSquares();
