@@ -4,11 +4,11 @@
 
   const createSquares = (quantity = 16) => {
     const squares = [];
-    const realQuantity = quantity * quantity;
     for (let i = 1; i <= quantity * quantity; i++) {
       const square = document.createElement('div');
       square.style.width = `${960 / quantity}px`;
       square.style.height = `${960 / quantity}px`;
+      square.style.opacity = 0.2;
       squares.push(square);
     }
     return squares;
@@ -16,6 +16,8 @@
 
   const createHoverEffect = (event) => {
     event.target.style.backgroundColor = 'lightcoral';
+    console.log(event.target.style.opacity);
+    event.target.style.opacity = +event.target.style.opacity + 0.1;
   };
 
   const appendSquares = (size = 16) => {
@@ -27,6 +29,8 @@
   };
   const resizeGrid = () => {
     const size = prompt('Enter new size');
+    if (+size > 100) return alert('Too much');
+    if (+size < 5) return alert('Too few');
     container.innerHTML = '';
     appendSquares(size);
   };

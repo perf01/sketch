@@ -20,7 +20,7 @@ body {
 }
 .container div {
   background-color: white;
-  outline: 2px solid black;
+  border: 2px solid black;
 }
 .box {
   /* background-color: white;
