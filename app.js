@@ -25,12 +25,12 @@
       square.addEventListener('mouseover', (event) => createHoverEffect(event))
     );
   };
-  const resizeGread = () => {
+  const resizeGrid = () => {
     const size = prompt('Enter new size');
     container.innerHTML = '';
     appendSquares(size);
   };
-  resizeBtn.addEventListener('click', resizeGread);
+  resizeBtn.addEventListener('click', resizeGrid);
 
   appendSquares(16);
 })();
